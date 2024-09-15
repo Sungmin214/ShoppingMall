@@ -1,10 +1,15 @@
 package com.naver.shopping.member;
 
+import com.naver.shopping.AppConfig;
+import com.naver.shopping.order.OrderService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void 회원가입() {
