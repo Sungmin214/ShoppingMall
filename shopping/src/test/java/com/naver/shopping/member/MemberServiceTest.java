@@ -8,7 +8,7 @@ public class MemberServiceTest {
 
     @Test
     void 회원가입() {
-        Member member = new Member(1L, "실험1", Grade.VIP);
+        Member member = new Member(1L, "실험1", Grade.BASIC);
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
 
