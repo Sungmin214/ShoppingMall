@@ -4,12 +4,16 @@ import com.naver.shopping.AppConfig;
 import com.naver.shopping.order.OrderService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberServiceTest {
 
-    AppConfig appConfig = new AppConfig();
-    MemberService memberService = appConfig.memberService();
-    OrderService orderService = appConfig.orderService();
+//    AppConfig appConfig = new AppConfig();
+//    MemberService memberService = appConfig.memberService();
+
+    ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+    MemberService memberService = ac.getBean("memberService", MemberService.class);
 
     @Test
     void 회원가입() {
