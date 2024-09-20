@@ -2,7 +2,9 @@ package com.naver.shopping.discount;
 
 import com.naver.shopping.member.Grade;
 import com.naver.shopping.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
     private int discountPercent = 10; //10% 할인
     @Override
